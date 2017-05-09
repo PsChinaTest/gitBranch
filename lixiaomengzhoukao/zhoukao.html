@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+    	var arr=["a","b","c","a"];
+        var brr=[];
+        for (var i=0;i<arr.length;i++){
+            if(brr.indexOf(arr[i])==-1){
+                brr.unshift(arr[i]);
+            }
+        }
+        console.log(brr);
+        var str=["1","2","3","4","1","2"];
+	    var str2=[];
+	    for (var i=0;i<str.length;i++){
+	        for(var j=i+1;j<str.length;j++){
+	            if(str[i]===str[j]){
+	                str2.push(str[i]);
+	            }
+	        }
+	    }
+	    console.log(str2);
+
+	</script>
+</body>
+</html>
