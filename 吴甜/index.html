@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//one
+	var arr=[2,2,5,6,8,8,9];
+	function fn(arr){
+		var brr=[];
+		for(var i=0;i<arr.length;i++){
+			if(brr.indexOf(arr[i])==-1){
+				brr.push(arr[i]);
+			}
+		}
+		return brr;
+	}
+	console.log(fn(arr));
+
+	//two
+	Array.prototype.fn2=function(){
+		var brr=[];
+		for(var i=0;i<this.length;i++){
+			if(brr.indexOf(this[i])==-1){
+				brr.push(this[i]);
+			}
+		}
+		return brr;
+	}
+	console.log(arr.fn2());
+
+	</script>
+</body>
+</html>
