@@ -30,8 +30,7 @@ gulp.task('css',function(){
 //		livereload:true,
 gulp.task('connect',function(){
 	connect.server({
-		port:8020,
-		livereload:true
+		port:8020
 	});
 });
 
@@ -81,11 +80,4 @@ gulp.task('TestHtmlmin',function(){
 		.pipe(htmlmin(options))
 		.pipe(gulp.dest('../../../saas/devicetest/pc'));
 });
-
-//拷贝文件
-gulp.task('copy',function(){
-	gulp.src('package.json')
-		.pipe(gulp.dest('../'));
-});
-
-gulp.task('default',['less','css','html','js','connect','minifyImg','clean','uglify','TestHtmlmin','watch','copy']);
+gulp.task('default',['less','css','html','js','watch','connect','minifyImg','clean','uglify','TestHtmlmin']);
