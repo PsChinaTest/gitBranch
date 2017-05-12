@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<!--<script src="../../JavaScript/jquery-1.11.0.js"></script>-->
+	<body>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	function MyPromise(func){
+		var self = this;
+		this.succeedList = [];
+		this.defeatedList = [];
+		this.then = function (s,d) {
+			this.succeedList.push(s);
+			this.defeatedList.push(d);
+			return this;
+		}
+		this.didSucceed = function(){
+			var result;
+			for(i in self.succeedList){
+				result = self.succeedList[i].call();
+			}
+			return result;
+		}
+		this.didDefeated = function(){
+			var result;
+			for(i in self.defeatedList){
+				result = self.defeatedList[i].call();
+			}
+			return result;
+		}
+		setTimeout(function(){
+			func(self.didSucceed,self.didDefeated);
+		},0)
+	}
+// 测试代码
+	new MyPromise(function(s,d){
+		setTimeout(function(){
+			console.log("哈哈哈Did run");
+			console.log(s());
+		},2000);
+		
+	}).then(function(){
+		alert("成功");
+		return "哈哈哈";
+	},function(){
+		alert("失败");
+	})
+</script>
