@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box{
+			display: inline-block;
+			width: 20px;
+			background: skyblue;
+			text-align: center;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div ng-app="app">
+		<div ng-controller="con1">
+			<div>
+				<input type="text" ng-model="inp1">
+				<span ng-click="add()" ng-class="box">+</span><span ng-click="del()" ng-class="box">-</span>
+				<div >合计：{{mes()}}</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="controller/controller.js"></script>
+</html>
