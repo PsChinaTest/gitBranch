@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车</title>
+	<style>
+	.price{
+		-webkit-user-select:none;
+	}
+	</style>
+</head>
+<body ng-app='app'>
+	<div ng-controller='controllerA'>
+		<p class='price'>单价：
+			<span><b>{{only}}</b>元</span>
+			<span ng-click='add()'>＋</span>
+			<span>{{num}}</span>
+			<span ng-click='del()'>－</span>
+		</p>
+		<p>合计：
+			<span><b>{{num*only}}</b>元</span>
+		</p>
+	</div>
+	
+</body>
+<script src='js/angular.min.js'></script>
+<script>
+	var app=angular.module('app',[]);
+	app.controller('controllerA',function($scope){
+		$scope.only=10;
+		$scope.num=1;
+		$scope.add=function(){
+			$scope.num++;
+		}
+		$scope.del=function(){
+			if($scope.num>1){
+				$scope.num--;
+			}
+		}
+	})
+
+</script>
+</html>
