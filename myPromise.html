@@ -15,8 +15,11 @@
 		this.succeedList = [];
 		this.defeatedList = [];
 		this.then = function (s,d) {
-			this.succeedList.push(s);
-			this.defeatedList.push(d);
+	
+				this.succeedList.push(s);
+			
+				this.defeatedList.push(d);
+			
 			return this;
 		}
 		this.didSucceed = function(){
@@ -41,7 +44,7 @@
 	new MyPromise(function(s,d){
 		setTimeout(function(){
 			console.log("哈哈哈Did run");
-			console.log(s());
+			console.log(d());
 		},2000);
 		
 	}).then(function(){

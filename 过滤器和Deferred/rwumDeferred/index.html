@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+</body>
+	<script src="js/jquery-3.2.1.min.js"></script>
+</html>
+
+<script>
+
+/*	
+	var deferred = $.Deferred();
+	console.log(deferred);
+	$.ajax('http://127.0.0.1:8090/index').fail(function(error){
+		console.log(error);
+	}).done(function(result){
+		console.log(result);
+		console.log('aaaa');	
+	}).then(function(result){
+		console.log(result);
+		setTimeout(function(){
+			console.log('bbbbb');	
+		}, 3000);
+	}).then(function(result){
+		console.log(result);
+		setTimeout(function(){
+			console.log('cccc');	
+		}, 4000);		
+	})
+
+
+	$.when(
+		$.ajax('http://127.0.0.1:8090/index'),
+		$.ajax('http://127.0.0.1:8090/goodsList'),
+		$.ajax('http://127.0.0.1:8090/shoppingCar')
+		).then(function(indexSucceed,goodListSucceed,shoppingCarSucceed){
+			console.log('成功');
+			console.log(indexSucceed,goodListSucceed,shoppingCarSucceed);
+		},function(indexError,goodListError,shoppingCarError){
+			console.log('失败');
+			console.log(indexError,goodListError,shoppingCarError);
+		});
+*/
+	//always
+	//catch
+	//done
+	//fail
+	//notify
+	//notifyWith
+	//pipe
+	//progress
+	//poromise
+	//rehect
+	//rejectWith
+	//resolve
+	//resolveWith
+	//state
+	//then   
+//手撕poromise   
+	//var MyPromise = function(firstTask){
+	//	this.taskArray = [];
+	//	this.then=function(fun){
+	//		taskArray.push(fun)
+	//	}
+	//}      
+	function callBack(a,b,c){
+		console.log(a,b,c);
+		console.log('我是一个只有json返回了callBack({***})我才会运行的函数');
+	}   
+	         
+</script>
+
+<script src="http://127.0.0.1:8090/jsonp" ></script>
